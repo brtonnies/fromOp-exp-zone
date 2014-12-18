@@ -10,6 +10,9 @@
       form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
       
       
+      #usrs { list-style-type: none; margin: 0; padding: 0; }
+      #usrs li { padding: 5px 10px; }
+      #usrs li:nth-child(odd) {  } 
       #messages { list-style-type: none; margin: 0; padding: 0; }
       #messages li { padding: 5px 10px; }
       #messages li:nth-child(odd) { background: #eee; }
@@ -26,16 +29,37 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
       var socket = io();
-      
       $('form').submit(function(){
         socket.emit('chat message', $('#m').val());
-      $('#m').val('');      
+        $('#m').val('');      
         return false;
       });
       socket.on('chat message', function(msg){
-    $('#messages').append($('<li>').text(msg));
-    });
-  </script>
+        $('#messages').append($('<li>').text(msg));
+      });
+    </script>
+    <script>
+      var socket = io();
+      io.on('connection', function(){
+        socket.emit('user connected    | users: ', $('#u').val());
+        $('#u').val('');
+        return false;
+      });
+      socket.on('user connected', function(){
+        $('#usrs').append($'<li>').text(msg);
+      });
+    </script>
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
