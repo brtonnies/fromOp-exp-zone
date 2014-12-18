@@ -1,0 +1,23 @@
+{
+  "name": "socket-chat-example",
+  "version": "1.0.0",
+  "description": "socket chat example",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n/a"
+  },
+  "author": "Brian Tonnies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n/a/issues"
+  },
+  "homepage": "https://github.com/n/a",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.2.1"
+  }
+}
